@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/039088e916.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;600&display=swap" rel="stylesheet">
+    <title>Rock Paper Scissors Game</title>
+</head>
+<body>
+    <header>
+        <div class="title">Rock Paper Scissors</div>
+    </header>
+    <main>
+        <div class="score-board">
+            <div class="badge user">user</div>
+            <div class="badge computer">ai</div>
+            <span data-score="user">0</span>:<span data-score="computer">0</span>
+        </div>
+
+        <div class="choices">
+            <div data-choice="rock" class="choice">
+                <i class="fa-solid fa-hand-back-fist"></i>
+            </div>
+            <div data-choice="paper" class="choice">
+                <i class="fa-solid fa-hand"></i>
+            </div>
+            <div data-choice="scissors" class="choice">
+                <i class="fa-solid fa-hand-scissors"></i>
+            </div>
+        </div>
+
+        <div class="result">
+            <p data-result></p>
+        </div>
+        <div class="reset">
+            <button data-reset>RESET GAME</button>
+        </div>
+    </main>
+    <script src="main.js"></script>
+</body>
+</html>
