@@ -1,1 +1,3 @@
-# A simple game of Rock, Paper, Scissors
+# Rock, Paper, Scissors
+
+ A simple game in CSS and Vanilla Javascript
