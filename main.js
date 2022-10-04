@@ -4,6 +4,7 @@ const main = document.querySelector('main');
 let userScore = 0;
 let computerScore = 0;
 
+const challengeDisplay = document.querySelector('[data-challenge]');
 const userScoreDisplay = document.querySelector('[data-score="user"]');
 const computerScoreDisplay = document.querySelector('[data-score="computer"]');
 const choiceBtns = document.querySelectorAll('[data-choice]');
@@ -56,7 +57,7 @@ function getRandomChoice() {
 
 function play(userInput) {
     const computerInput = getRandomChoice();
-    result.innerHTML = `You : ${userInput.toUpperCase()}<br>AI : ${computerInput.toUpperCase()}`;
+    challengeDisplay.innerHTML = `You : ${userInput.toUpperCase()}<br>AI : ${computerInput.toUpperCase()}`;
     getWinner(userInput, computerInput);
 }
 

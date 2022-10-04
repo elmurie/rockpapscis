@@ -67,6 +67,9 @@ main .score-board .badge.computer {
   right: 0;
   transform: translate(50%, -50%);
 }
+main .challenge {
+  text-align: center;
+}
 main .result {
   text-align: center;
   font-size: 2.5rem;
