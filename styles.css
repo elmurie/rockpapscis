@@ -21,8 +21,8 @@ header {
   display: flex;
   place-content: center;
   padding: 0.9375rem 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 90%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
 }
 header .title {
   color: #000;
@@ -152,5 +152,12 @@ main .reset button:hover {
   }
   main .reset {
     margin: auto auto 20px;
+  }
+}
+@media screen and (max-width: 320px) {
+  main .choices i {
+    font-size: 25px;
+    border: 4px solid #fff;
+    padding: 20px;
   }
 }/*# sourceMappingURL=styles.css.map */

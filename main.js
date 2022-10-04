@@ -105,4 +105,5 @@ function resetGame() {
     computerScore = 0;
     computerScoreDisplay.innerHTML = computerScore;
     result.innerHTML = ``;
+    challengeDisplay.innerHTML = ``;
 }
