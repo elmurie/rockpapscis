@@ -1,3 +1,6 @@
+const header = document.querySelector('header');
+const main = document.querySelector('main');
+
 let userScore = 0;
 let computerScore = 0;
 
@@ -8,15 +11,38 @@ const result = document.querySelector('[data-result]');
 const reset = document.querySelector('[data-reset]');
 
 const values = ['rock', 'paper', 'scissors'];
+let outcome = '';
+
+let resizeListener;
+window.onresize = () => {
+    clearTimeout(resizeListener);
+    resizeListener = setTimeout(() => {
+        checkViewPort();
+    }, 250);
+};
+
+function checkViewPort() {
+    let headerHeight = header.clientHeight;
+    console.log(headerHeight)
+    main.style.height = `calc(100% - ${headerHeight}px)`;
+}
+
+checkViewPort();
 
 choiceBtns.forEach((btn) => {
     let gameListener;
+    const icon = btn.querySelector('i');
     btn.addEventListener('click', () => {
-        clearTimeout(gameListener)
+        // clear event if btn has already been clicked
+        clearTimeout(gameListener);
         const value = btn.dataset.choice;
         gameListener = setTimeout(() => {
             play(value);
-        }, 1000);
+            icon.classList.add(outcome);
+            setTimeout(() => {
+                icon.classList.remove(outcome);
+            }, 500);
+        }, 500);
     });
 })
 
@@ -31,14 +57,13 @@ function getRandomChoice() {
 function play(userInput) {
     const computerInput = getRandomChoice();
     result.innerHTML = `You : ${userInput.toUpperCase()}<br>AI : ${computerInput.toUpperCase()}`;
-    setTimeout(() => {
-        getWinner(userInput, computerInput);
-    }, 1000);
+    getWinner(userInput, computerInput);
 }
 
 function getWinner(userInput, computerInput) {
     if (userInput === computerInput) {
         result.innerHTML = "Draw!"
+        updateScore('draw');
     } else {
         const firstValueInitial = userInput.charAt(0);
         const secondValueInitial = computerInput.charAt(0);
@@ -52,8 +77,8 @@ function getWinner(userInput, computerInput) {
             case "ps":
             case "sr":
             case "rp":
-                updateScore('computer');
                 result.innerHTML = `AI WINS!`;
+                updateScore('computer');
                 break;
         }
     }
@@ -61,11 +86,15 @@ function getWinner(userInput, computerInput) {
 
 function updateScore(winner) {
     if (winner === 'user') {
+        outcome = 'win';
         userScore++;
         userScoreDisplay.innerHTML = userScore;
-    } else {
+    } else if (winner === 'computer'){
+        outcome = 'lose';
         computerScore++;
         computerScoreDisplay.innerHTML = computerScore;
+    } else {
+        outcome = 'draw';
     }
 }
 

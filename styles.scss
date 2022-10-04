@@ -33,11 +33,13 @@ header {
 }
 
 main {
+    display: flex;
+    flex-direction: column;
     .score-board {
         border: 1px solid #fff;
         border-radius: 1.25rem;
         width: 40%;
-        margin: 3.125rem auto;
+        margin: 3.125rem auto 0 auto;
         position: relative;
         text-align: center;
         font-size: 3.125rem;
@@ -90,11 +92,26 @@ main {
                 transition: all 0.5s;
                 transform: translateY(-10%);
             }
+            &.win{
+                border-color: #1dff1d;
+                color: #1dff1d;
+                box-shadow: 0px 0px 20px 0px #1dff1d;
+            }
+            &.lose{
+                border-color:  #ca1d1d;
+                color: #ca1d1d;
+                box-shadow: 0px 0px 20px 0px #ca1d1d;
+            }
+            &.draw{
+                border-color:  #b4b4b4;
+                color: #b4b4b4;
+                box-shadow: 0px 0px 20px 0px #b4b4b4;
+            }
         }
     }
 
     .reset {
-        margin-top: 3.125rem;
+        margin: auto auto 50px;
         text-align: center;
         button {
             background-color: #d83c3c; /* Green */
@@ -139,6 +156,10 @@ main {
                 border-radius: 50%;
                 transition: all 0.5s;
             }
+        }
+        .reset {
+            margin: auto auto 20px;
+
         }
     }
 }

@@ -31,11 +31,15 @@ header .title {
   margin: auto 0;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+}
 main .score-board {
   border: 1px solid #fff;
   border-radius: 1.25rem;
   width: 40%;
-  margin: 3.125rem auto;
+  margin: 3.125rem auto 0 auto;
   position: relative;
   text-align: center;
   font-size: 3.125rem;
@@ -83,8 +87,23 @@ main .choices i:hover {
   transition: all 0.5s;
   transform: translateY(-10%);
 }
+main .choices i.win {
+  border-color: #1dff1d;
+  color: #1dff1d;
+  box-shadow: 0px 0px 20px 0px #1dff1d;
+}
+main .choices i.lose {
+  border-color: #ca1d1d;
+  color: #ca1d1d;
+  box-shadow: 0px 0px 20px 0px #ca1d1d;
+}
+main .choices i.draw {
+  border-color: #b4b4b4;
+  color: #b4b4b4;
+  box-shadow: 0px 0px 20px 0px #b4b4b4;
+}
 main .reset {
-  margin-top: 3.125rem;
+  margin: auto auto 50px;
   text-align: center;
 }
 main .reset button {
@@ -125,5 +144,8 @@ main .reset button:hover {
     padding: 25px;
     border-radius: 50%;
     transition: all 0.5s;
+  }
+  main .reset {
+    margin: auto auto 20px;
   }
 }/*# sourceMappingURL=styles.css.map */
