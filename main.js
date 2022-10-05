@@ -24,7 +24,6 @@ window.onresize = () => {
 
 function checkViewPort() {
     let headerHeight = header.clientHeight;
-    console.log(headerHeight)
     main.style.height = `calc(100% - ${headerHeight}px)`;
 }
 

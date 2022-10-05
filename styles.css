@@ -8,7 +8,7 @@ body {
   height: 100vh;
   font-family: "Titillium Web", sans-serif;
   background: rgb(30, 16, 93);
-  background: linear-gradient(180deg, rgb(30, 16, 93) 50%, rgb(55, 28, 176) 92%);
+  background: linear-gradient(180deg, #1e105d 50%, #371cb0 92%);
   color: #fff;
 }
 
@@ -21,8 +21,8 @@ header {
   display: flex;
   place-content: center;
   padding: 0.9375rem 0;
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+  -webkit-clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+          clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
 }
 header .title {
   color: #000;
@@ -129,6 +129,10 @@ main .reset button:hover {
 }
 
 @media screen and (max-width: 768px) {
+  header {
+    -webkit-clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+            clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
+  }
   header .title {
     font-size: 1.875rem;
   }

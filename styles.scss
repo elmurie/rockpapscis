@@ -8,7 +8,7 @@ body {
     height: 100vh;
     font-family: 'Titillium Web', sans-serif;
     background: rgb(30, 16, 93);
-    background: linear-gradient(180deg, rgba(30, 16, 93, 1) 50%, rgba(55, 28, 176, 1) 92%);
+    background: linear-gradient(180deg, #1e105d 50%, #371cb0 92%);
     color: #fff;
 }
 
@@ -21,7 +21,8 @@ header {
     display: flex;
     place-content: center;
     padding: .9375rem 0;
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 70%, 0 100%);
+    clip-path: polygon(100% 0, 100% 50%, 50% 100%, 0 50%, 0 0);
+
     .title {
         color: #000;
         font-weight: 600;
@@ -136,6 +137,7 @@ main {
 
 @media screen and (max-width: 768px) {
     header {
+        clip-path: polygon(100% 0, 100% 70%, 50% 100%, 0 70%, 0 0);
         .title {
             font-size: 1.875rem;
         }
